@@ -16,6 +16,8 @@ import MovieSlider from "@/components/movieSlider/movieSlider";
 import "@/app/movieInfo/movieInfo.css"
 import { useRouter } from "next/navigation";
 
+// Alert library :(
+import { ToastContainer,toast } from 'react-toastify';
 
 const MovieInfo = () => {
 
@@ -82,6 +84,9 @@ const MovieInfo = () => {
 
     // WishList:
     const Wishlist = (id) => {
+        const getItem = localStorage.getItem("movies")
+        const jsoN = JSON.parse(getItem)
+        var valCheck = false
         let obj = {
             path: id.poster_path,
             title: id.original_title,
@@ -102,9 +107,23 @@ const MovieInfo = () => {
         })
         obj.genresArr.push(arr.slice(0, 2))
         addMovie(obj)
+        jsoN.map((item)=>{
+            // console.log(item.title)
+            if(item.title === id.original_title){
+                valCheck = true
+                return valCheck
+            }
+        })
+        if(valCheck){
+            toast(`Movie(${id.original_title}) is already added`)
+        }
+        else{
+            toast(`Movie(${id.original_title}) added`)
+        }
+        
         // console.log(obj.genresArr)
-        // console.log(id)
-        console.log(userMovieId)
+        // console.log(jsoN.title)
+        // console.log(userMovieId)
 
     }
 
@@ -147,7 +166,10 @@ const MovieInfo = () => {
 
     return (
         <div>
+            <ToastContainer theme="dark"/>
             <Header />
+
+
             <div className="mainInfoDiv">
                 {
                     (movieId) ?

@@ -10,6 +10,9 @@ import Button from '@mui/material/Button';
 import fallback from "@/images/fallback.jpg"
 import Image from "next/image";
 
+// Alert library :(
+import { ToastContainer,toast } from 'react-toastify';
+
 // Context:
 import { useMovie } from "@/context/MovieContext";
 
@@ -134,13 +137,11 @@ const MovieWishList = () => {
 
     // Calling SortVal through Dropdown
     const callSortList = (e) => {
-        // console.log(e.target.textContent)
         if (e.target.textContent === "Date Added (Oldest)") {
             const sorted = [...getList].sort((a, b) => {
                 return new Date(a.timeStored).getTime() - new Date(b.timeStored).getTime();
             });
             setGetList(sorted)
-            // console.log(sorted)
         }
         else if (e.target.textContent === "Manual" || e.target.textContent === "Date Added (Newest)") {
             const getItem = localStorage.getItem("movies")
@@ -202,23 +203,9 @@ const MovieWishList = () => {
 
             // console.log(genresBtnList)
         }
-
+        toast("Removed successfully")
     }
 
-
-    // For testing purpose
-    // // wishDropdown:
-    // const WishDrop = (item, index, e) => {
-    //     if (open == index) {
-    //         // console.log(open , index)
-    //         wishDropRef.current[index].classList.toggle('wishActive')
-    //     }
-    //     else {
-    //         wishDropRef.current[open].classList.toggle('wishActive')
-    //     }
-    //     e.stopPropagation()
-    //     setOpen(index)
-    // }
 
 
     // For toggling Li Dropdown By using component
@@ -249,12 +236,10 @@ const MovieWishList = () => {
     return (
 
         <div>
+            <ToastContainer theme="dark"/>
             <Header />
             <div className="backWishDiv">
                 <div className="innerWishDiv">
-                    {/* <h1 style={{color : "#FFF", opacity: ".7"}}>
-                        Watch Later
-                    </h1> */}
                     <div className="sideWishBar">
                         <Image
                             src={(getList !== null && getList.length > 0) ? "https://image.tmdb.org/t/p/w500" + getList[0].path : fallback}

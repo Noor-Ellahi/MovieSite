@@ -5,6 +5,10 @@
 
 }
 
+.Toastify__progress-bar {
+  background: #BF000A; /* your custom color */
+}
+
 body::-webkit-scrollbar {
     background-color: #292222;
     width: 5px; 
