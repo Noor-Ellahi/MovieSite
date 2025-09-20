@@ -1,0 +1,199 @@
+.mainInfoDiv {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background: rgba(0,0,0,1); */
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.7) 60%);
+}
+
+
+.mainInfoDiv img {
+    height: 50vh;
+    width: 55vh;
+}
+
+.innerInfoDiv {
+    height: 50vh;
+    width: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.innerInfoDiv .infoChildDiv {
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.lastInnerDiv h1 {
+    color: #FFFFFF;
+    font-size: 45px;
+}
+
+.lastInnerDiv ul {
+    color: #FFFFFF;
+    opacity: .7;
+    padding: 5px 0px 5px 0px;
+    display: flex;
+}
+
+.lastInnerDiv ul li {
+    list-style-type: none;
+    padding-right: 5px;
+}
+
+.lastInnerDiv ul li::after {
+    content: " •";
+}
+
+.lastInnerDiv ul li:last-child::after {
+    content: "";
+}
+
+.lastInnerDiv div {
+    font-size: 17px;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.lastInnerDiv p {
+    color: #FFFFFF;
+    opacity: .7;
+    padding-right: 5px;
+}
+
+.lastInnerDiv p::after {
+    content: " •";
+}
+
+.lastInnerDiv p:last-child:after {
+    content: "";
+}
+
+
+.childBtnDiv {
+    display: flex;
+    justify-content: end;
+    transition: .5s;
+
+}
+
+.childBtnDiv button {
+    padding: 10px 30px;
+    background-color: #000;
+    color: #FFFFFF;
+    border: 0;
+    font-size: 18px;
+    opacity: .8;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.childBtnDiv button:hover {
+    color: #E50914;
+
+}
+
+.childBtnDiv .specialInfoBtn {
+    background-color: #E50914;
+    color: #000;
+}
+
+.childBtnDiv .specialInfoBtn:hover {
+    background-color: #BF000A;
+}
+
+
+@media screen and (max-width : 1350px) {
+    .mainInfoDiv img {
+        height: 45vh;
+        width: 50vh;
+    }
+
+    .innerInfoDiv {
+        height: 45vh;
+        width: 65vh;
+    }
+}
+
+@media screen and (max-width : 1100px) {
+    .mainInfoDiv img {
+        height: 35vh;
+        width: 40vh;
+    }
+
+    .innerInfoDiv {
+        height: 40vh;
+        width: 55vh;
+    }
+}
+
+@media screen and (max-width : 900px) {
+    .mainInfoDiv img {
+        height: 30vh;
+        width: 35vh;
+    }
+    .lastInnerDiv p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        overflow-y: scroll;
+        padding-bottom: 10px;
+    }
+    .lastInnerDiv div {
+        padding-bottom: 0px;
+    }
+
+    .innerInfoDiv {
+        height: 35vh;
+        width: 45vh;
+    }
+
+}
+
+
+@media screen and (max-width : 768px) { 
+    .mainInfoDiv{
+        flex-direction: column;
+        min-height: 70vh;
+    }
+    .mainInfoDiv img {
+        height: 30vh;
+        width: 35vh;
+    }
+    .innerInfoDiv{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width : 600px) { 
+    .mainInfoDiv{
+        flex-direction: column;
+        min-height: 75vh;
+    }
+    .mainInfoDiv img {
+        height: 25vh;
+        width: 30vh;
+    }
+    .innerInfoDiv{
+        width: 100%;
+        height: 40vh;
+    }
+    .childBtnDiv {
+        justify-content: center;
+    }
+    .childBtnDiv button {
+        padding: 10px 15px;
+        margin: 10px 5px;
+        font-size: 17px;
+    }
+    .lastInnerDiv h1 {
+        font-size: 30px;
+    }
+}

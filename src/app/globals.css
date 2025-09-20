@@ -1,42 +1,423 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body::-webkit-scrollbar {
+    background-color: #292222;
+    width: 5px; 
+    transition: .5s;
+}
+/* body::-webkit-scrollbar:hover {
+    background-color: #292222;
+    width: 10px;
+} */
+body::-webkit-scrollbar-thumb {
+    background-color: #6e6a6a;
+    width: 5px;
+}
+
+.main {
+  background-color: #141414;
+}
+
+/* Front page */
+.frontBackImg {
+  transition: .25s ease-out;
+
+}
+
+
+.frontPage {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 91vh;
+}
+
+.frontPage .innerFrontDiv {
+  width: 75%;
+  height: 40vh;
+}
+
+.frontPage h1 {
+  font-size: 75px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+.frontPage p {
+  font-size: 18px;
+  opacity: .6;
+  letter-spacing: 1px;
+}
+
+.frontBtnDiv {
+  padding-top: 40px;
+
+}
+
+.frontPage button {
+  padding: 10px 30px;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 0;
+  font-size: 18px;
+  opacity: .8;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.frontPage button:hover {
+  color: #eb5d64;
+}
+
+.frontPage .frontSpecialBtn {
+  background-color: #E50914;
+  opacity: 1;
+}
+
+.frontPage .frontSpecialBtn:hover {
+  background-color: #BF000A;
+}
+
+/* Trailer  */
+.modalOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background: #000;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.modalContent iframe {
+  width: 80vh;
+  height: 50vh;
+}
+
+.modalContent button {
+  background-color: transparent;
+  font-size: 20px;
+  color: #DDD7DC;
+  border: 0;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .testing {
+  width: 100px;
+  height: 150px;
+} */
+
+
+/* Home page movie list */
+
+.mainMovieListCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 0px;
+  position: relative;
+  background-color: #141414;
+}
+
+.movieText {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movieText h2 {
+  color: #fff;
+}
+
+.movieText h4 {
+  cursor: pointer;
+  color: #eb5d64;
+}
+
+.movieListCont {
+  display: flex;
+  /* justify-content: center; */
+  width: 90%;
+  padding: 20px 0px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.movieListCont ul {
+  display: flex;
+  height: 30vh;
+  flex-direction: row;
+  margin: 0px 10px;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 220px;
+  background-color: black;
+  transition: .75s;
+  scroll-snap-align: start;
+}
+
+/* Scroll buttons */
+.scrollBtnDiv {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 90%;
+
+}
+
+/* .scrollBtnDiv button{
+  padding: 10 20;
+}  */
+
+
+.scrollBtnDiv button {
+  z-index: 1;
+  pointer-events: auto;
+  /* make buttons clickable */
+  padding: 10px 15px;
+  /* fixed unit issue */
+  /* background: rgba(0, 0, 0, 0.5); */
+  background-color: transparent;
+  color: white;
+  border: 5px solid rgba(255, 255, 255, .12);
+  cursor: pointer;
+  border-radius: 25px;
+
+}
+
+.movieListCont li {
+  width: 100%;
+  height: 100%;
+  color: #DDD7DC;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.movieListCont li div {
+  position: absolute;
+  /* display: none; */
+  opacity: 0;
+  transition: .75s;
+  text-align: start;
+  margin: 10px;
+
+}
+
+.movieListCont li div p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  opacity: 0.8;
+  overflow: hidden;
+}
+
+.movieListCont li h3 {
+  font-size: 17px;
+  padding: 15px 0px;
+
+}
+
+.movieListCont img {
+  width: 100%;
+  height: 100%;
+  transition: .5s;
+}
+
+
+.movieListCont ul:hover {
+  /* padding: 15px 15px; */
+  transform: scale(1.15);
+}
+
+.movieListCont ul:hover div {
+  opacity: 1;
+}
+
+.movieListCont li:hover img {
+  overflow: visible;
+  opacity: 0.4;
+  /* display: none; */
+}
+
+.listSpacing {
+  padding-bottom: 50px;
+}
+
+.voting {
+  padding-top: 5px;
+}
+
+
+/* Loading animation */
+.mainLoad{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #141414;
+}
+.jumpDotsDiv {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.dot {
+  width: 25px;
+  height: 25px;
+  background-color: #E50914;
+  animation: jump 1s infinite alternate;
+}
+.dot:nth-child(2){animation-delay: .25s;}
+.dot:nth-child(3) {animation-delay: .5s;}
+.dot:nth-child(4) {animation-delay: .75s;}
+@keyframes jump {
+  to {
+    transform: translateY(-25px);
+    opacity: 0.6;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+
+
+
+
+@media screen and (max-width:1300px) {
+  .frontBackImg {
+    height: 65vh !important;
+  }
+
+  .frontPage {
+    width: 80%;
+    height: 75vh;
+  }
+
+  .frontPage h1 {
+    font-size: 60px;
+  }
+
+  .frontPage p {
+    letter-spacing: 0px;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media screen and (max-width:768px) {
+
+  .movieListCont ul {
+    min-width: 170px;
+    height: 22vh;
+  }
+
+  .frontBackImg {
+    height: 60vh !important;
+  }
+
+  .frontPage {
+    height: 80vh;
+    width: 100%;
+  }
+
+  .frontPage .innerFrontDiv {
+    width: 95%;
+  }
+  .movieText h4 {
+    font-size: 15px;
+  }
+  .movieText h2 {
+    font-size: 20px;
+  }
+
+
+  /* Scrolling effects for card  */
+  .scrollBtnDiv {
+    display: none;
+  }
+  .movieListCont {
+    overflow-x: auto;
+    /* enables vertical scroll */
+    -webkit-overflow-scrolling: touch;
+  }
+  .movieListCont ul {
+    overflow-x: scroll;
+    overflow-x: auto;
+    /* enables vertical scroll */
+    -webkit-overflow-scrolling: touch;
+  }
+  .modalContent iframe {
+    width: 100%;
+    height: 25vh;
+  }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@media screen and (max-width:600px) {
+  .frontPage {
+    height: 80vh;
+  }
+
+  .frontPage h1 {
+    font-size: 40px;
+  }
+
+  .frontPage button {
+    background-color: #292222;
+    color: #fff;
+    opacity: .7;
+  }
+
+  
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media screen and (max-width:500px) {
+  .frontPage p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    opacity: 0.8;
+    overflow: hidden;
   }
 }

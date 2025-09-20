@@ -1,0 +1,22 @@
+
+.mainIcon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0px;
+  gap: 40px;
+  color: #ffffff;
+  background-color: #333;
+}
+
+.footerIcon{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

@@ -1,0 +1,544 @@
+.backWishDiv {
+    background-color: #141414;
+    height: 91.8vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.backWishDiv .innerWishDiv {
+    margin: 0px 0px;
+    width: 100%;
+    /* background-color:#272727; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 91vh;
+}
+
+.sideWishBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4b4b4b;
+    /* width: 40vh; */
+    width: 20%;
+}
+
+.sideInfoBar {
+    width: 90%;
+    color: #fff;
+    opacity: .7;
+}
+
+.sideInfoBar h1 {
+    font-size: 25px;
+}
+
+.sideInfoBar p {
+    padding: 5px 0px;
+    font-size: 18px;
+    opacity: .7;
+}
+
+.sideWishBar img {
+    opacity: .6;
+    height: 15vh;
+    padding: 25px 0px;
+    width: 15vh;
+}
+
+.wishListCont {
+    /* width: 161vh; */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding-top: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+
+.wishListCont::-webkit-scrollbar {
+    background-color: #292222;
+    width: 5px;
+}
+
+.wishListCont::-webkit-scrollbar-thumb {
+    background-color: #6e6a6a;
+    width: 5px;
+}
+
+.wishBtnsDiv {
+    width: 90%;
+    padding: 20px 0px;
+    /* background-color: #E50914; */
+    position: relative;
+}
+
+.innerWishBtns {
+    display: flex;
+    transition: .25s;
+    gap: 15px;
+}
+
+.innerWishBtns button {
+    cursor: pointer;
+    background-color: #5e5c5c;
+    color: #fff;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 7px 14px;
+    opacity: .7;
+}
+
+.innerWishBtns .innerWishOne {
+    background-color: #3b3838;
+    opacity: .9;
+}
+
+.innerWishBtns .special1 {
+    padding: 0px 14px !important;
+    transition: .25s;
+    background-color: transparent;
+    font-size: 15px;
+    font-family: sans-serif;
+    opacity: .9;
+}
+
+.innerWishBtns .innerWishOne1 {
+    background-color: transparent;
+    opacity: .9;
+}
+
+/* .innerWishBtns button:active{
+    background-color: #3b3838;
+    opacity: .9;
+} */
+
+/* Dropdowns */
+.genreDropDiv {
+    width: 60vh;
+    background-color: #4b4b4b;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 65px;
+    left: 150px;
+    z-index: 1;
+    /* opacity: 0; */
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease, opacity 0.3s ease;
+    pointer-events: none;
+
+    /* transition: 1s; */
+}
+
+/* .genreDropDiv:hover{
+    width: 60vh;
+    height: auto;
+} */
+.genreDropDiv div {
+    display: flex;
+}
+
+.genreDropActive {
+    /* display: block; */
+    max-height: 200px;
+    /* large enough for your content */
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.genreDropDiv ul li {
+    list-style-type: none;
+    padding: 5px 0px;
+    cursor: pointer;
+    color: #fff;
+    transition: .5s;
+    opacity: .5;
+}
+
+.genreDropDiv ul li:hover {
+    opacity: 1;
+}
+
+
+/* Mobile genre dropper */
+
+.mobileGenrer {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    /* top, right, bottom, left = 0 */
+    background: rgba(0, 0, 0, 0.6);
+    /* dark backdrop */
+    display: none;
+    /* hidden by default */
+    z-index: 2000;
+    /* above everything */
+}
+
+.overlay.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlayContent {
+    background: #2a2a2a;
+    width: 90vw;
+    max-width: 300px;
+    padding: 1rem;
+    border-radius: 12px;
+    animation: fadeInUp .3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* optional animation */
+}
+
+.overlayContent h3 {
+    color: #fff;
+    opacity: .6;
+    padding-bottom: 15px;
+}
+
+.overlayContent ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    opacity: .4;
+    gap: .5rem;
+    height: 30vh;
+    overflow-y: scroll;
+}
+
+.overlayContent li {
+
+    flex: 1 1 45%;
+    text-align: center;
+    padding: .5rem;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Simple animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+
+
+
+
+
+.wishListCont ul {
+    width: 90%;
+    /* heigh: 90%; */
+}
+
+/* Sort dropper */
+.sortDropDiv {
+    /* padding: 20px; */
+    background-color: #4b4b4b;
+    /* width: 20vh; */
+    width: 20vh;
+    overflow: hidden;
+    padding: 7px 0px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    left: -15px;
+    transition: .05s;
+    /* display: none; */
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease, opacity 0.3s ease;
+    pointer-events: none;
+
+}
+
+.sortDropDiv ul {
+    width: 100%;
+}
+
+.sortDropDiv ul li {
+    padding: 15px 0px 15px 15px;
+    list-style-type: none;
+    color: #fff;
+    opacity: .5;
+    font-size: 15px;
+}
+
+.sortDropDivActive {
+    max-height: 200px;
+    /* large enough for your content */
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+/* .sortDropDiv:hover {
+    
+} */
+
+.sortDropDiv ul li:hover {
+
+    background-color: #3b3b3b;
+    opacity: .8;
+
+}
+
+
+.wishListy {
+    margin-bottom: 25px;
+    list-style-type: none;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    transition: .5s;
+    position: relative;
+    /* background-color: antiquewhite; */
+    /* border: 1px solid gray; */
+}
+
+.wishListy:hover {
+    /* border: 1px solid gray; */
+    box-shadow: 1px 1px 7px 1px gray;
+}
+
+.wishListyInfoDiv {
+    display: flex;
+    padding: 10px;
+}
+
+.wishInfoChild {
+    padding-top: 5px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishInfoChild p {
+    padding-bottom: 5px;
+    color: #fff;
+    opacity: .7;
+}
+
+.wishListyInfoDiv img {
+    height: 8vh;
+    width: 8vh;
+}
+
+
+.wishListEndDiv {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    /* background-color: wheat; */
+    color: #fff;
+}
+
+.dropDownWish {
+    background-color: #4b4b4b;
+    /* background-color: #6e6a6a; */
+    position: absolute;
+    right: 0px;
+    top: 90px;
+    z-index: 1;
+    border-radius: 5px;
+    padding: 5px;
+    /* display: none; */
+}
+
+.wishActive {
+    display: block;
+}
+
+.dropDownWish ul li {
+    color: #fff;
+    width: 10vh;
+    list-style-type: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    opacity: .5;
+}
+
+
+.dropDownWish ul li:hover {
+    background-color: #3b3b3b;
+    opacity: .9;
+}
+
+.wishListy:has(.dropDownWish ul li:hover) {
+    box-shadow: none;
+    border: none;
+}
+
+.wishEndDivBtn button {
+    background-color: transparent;
+    border: 0px;
+    color: #FFFFFF;
+    padding: 8px 8px;
+    margin-left: 4px;
+    font-size: 20px;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+
+
+.wishEndDivBtn button:hover {
+    color: #E50914;
+}
+
+
+
+.notFoundDiv {
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notFoundDiv h1 {
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.notFoundDiv h1:hover {
+    border: 1px solid gray;
+    box-shadow: 1px 1px 7px 1px gray;
+}
+
+
+@media screen and (max-width : 1050px) {
+    .backWishDiv .innerWishDiv {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sideWishBar {
+        width: 95%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .sideInfoBar {
+        width: 50%;
+    }
+
+    .wishListCont {
+        width: 95%;
+        min-height: 65vh;
+    }
+
+    .mobileGenrer {
+        display: block;
+    }
+
+    #displayGenrer {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width : 600px) {
+    .sideWishBar {
+        justify-content: center;
+        gap: 30px;
+    }
+    .sideWishBar img {
+        height: 12vh;
+        width: 12vh;
+    }
+
+    .sideInfoBar {
+        width: 60%;
+    }
+
+    .wishListCont ul {
+        width: 100%;
+    }
+
+
+}
+
+@media screen and (max-width : 500px) {
+    .sideWishBar {
+        width: 100%;
+    }
+    
+
+    .sideInfoBar h1 {
+        font-size: 22px;
+    }
+
+    .sideInfoBar p {
+        padding: 5px 0px;
+        font-size: 15px;
+        opacity: .7;
+    }
+
+    .wishListCont {
+        padding-top: 5px;
+        width: 100%;
+    }
+
+    .wishInfoChild p:last-child {
+        font-size: 11px;
+    }
+
+    .wishListEndDiv {
+        padding: 10px 10px 10px 0px;
+    }
+
+    .wishListEndDiv p {
+        font-size: 15px;
+    }
+}
+
+
+
+/* @media screen and (max-width : 600px) {
+
+    .wishListCont ul {
+        width: 100%;
+    }
+
+    .wishInfoChild p {
+        font-size: 15px;
+    }
+} */
