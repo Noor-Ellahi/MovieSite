@@ -73,7 +73,7 @@ const MovieInfo = () => {
 
     // Get Movie Data With ID coming from params
     const getMovie = async () => {
-        const apiUrl = `https://api.themoviedb.org/3/movie/${idRef.current}}?api_key=${imdbId}`
+        const apiUrl = `https://api.themoviedb.org/3/movie/${idRef.current}?api_key=${imdbId}`
         const res = await fetch(apiUrl)
         const data = await res.json()
         setMovieId(data)
@@ -136,6 +136,9 @@ const MovieInfo = () => {
 
     // Importing for Rendering movies IN movieInfo Page
     useEffect(() => {
+        // if(id){
+        //     getMovie(id)
+        // }
         if (idRef.current != null) {
             null
         }
@@ -146,6 +149,8 @@ const MovieInfo = () => {
             getMovie()
         }
     }, [idRef.current])
+    // }, [id]);
+
 
     useEffect(() => {
         getMovie()
