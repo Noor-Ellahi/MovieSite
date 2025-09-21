@@ -29,7 +29,7 @@ const MovieInfo = () => {
 
     // Movie Id
     const searchParams = useSearchParams();
-    const id = searchParams.get("id");
+    var id = searchParams.get("id");
 
     // Routers:
     const router = useRouter()
@@ -72,8 +72,8 @@ const MovieInfo = () => {
     }
 
     // Get Movie Data With ID coming from params
-    const getMovie = async () => {
-        const apiUrl = `https://api.themoviedb.org/3/movie/${idRef.current}?api_key=${imdbId}`
+    const getMovie = async ( movieId1) => {
+        const apiUrl = `https://api.themoviedb.org/3/movie/${movieId1}?api_key=${imdbId}`
         const res = await fetch(apiUrl)
         const data = await res.json()
         setMovieId(data)
@@ -131,30 +131,31 @@ const MovieInfo = () => {
     const gotoPage2 = (item) => {
         router.push(`/movieInfo?id=${item}`)
         router.refresh()
-        idRef.current = null
+        id = null
+        // idRef.current = null
     }
 
     // Importing for Rendering movies IN movieInfo Page
     useEffect(() => {
-        // if(id){
-        //     getMovie(id)
-        // }
-        if (idRef.current != null) {
-            null
+        if(id){
+            getMovie(id)
         }
-        else {
-            const newId = searchParams.get("id")
-            // console.log(newId)
-            idRef.current = newId
-            getMovie()
-        }
-    }, [idRef.current])
-    // }, [id]);
+    //     if (idRef.current != null) {
+    //         null
+    //     }
+    //     else {
+    //         const newId = searchParams.get("id")
+    //         // console.log(newId)
+    //         idRef.current = newId
+    //         getMovie()
+    //     }
+    // }, [idRef.current])
+    }, [id]);
 
 
-    useEffect(() => {
-        getMovie()
-    }, [])
+    // useEffect(() => {
+    //     getMovie()
+    // }, [])
 
     if (loading) {
         return (
